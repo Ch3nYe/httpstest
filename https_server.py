@@ -29,7 +29,8 @@ def main():
     server.socket = ssl.wrap_socket(server.socket, certfile = serverCerts, server_side = True,  
                                keyfile = serverKey,
                                cert_reqs = ssl.CERT_REQUIRED,
-                               ca_certs = clientCerts
+                               ca_certs = clientCerts,
+                               do_handshake_on_connect = False
                                )
     print("Starting server, listen at: %s:%s" % server_address)
     server.serve_forever()
