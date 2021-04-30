@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">httpstest</string>
+    <string name="ssl_pin">SSL Pin</string>
+</resources>

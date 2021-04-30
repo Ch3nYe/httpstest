@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/id_button_http_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HTTP CONNECT" />
+
+    <Button
+        android:id="@+id/id_button_https_connect_without_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HTTPS CONNECT(忽略证书校验)" />
+
+    <Button
+        android:id="@+id/id_button_https_connect_with_system_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HTTPS CONNECT(系统证书校验)" />
+
+    <Button
+        android:id="@+id/id_button_SSL_PINNING_with_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SSL PINNING(代码校验)" />
+
+    <Button
+        android:id="@+id/id_button_SSL_PINNING_with_CA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SSL PINNING(配置文件)" />
+
+    <Button
+        android:id="@+id/id_button_https_twoway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HTTPS 双向校验" />
+
+    <Button
+        android:id="@+id/id_button_webview_ssl_without_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WEBVIEW SSL(忽略证书校验)" />
+
+    <Button
+        android:id="@+id/id_button_webview_ssl_with_system_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WEBVIEW SSL(系统证书校验)" />
+
+    <Button
+        android:id="@+id/id_button_webview_ssl_pinning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WEBVIEW SSL(SSL PINNING)" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="检测代理"
+        android:id="@+id/id_check_proxy"
+        />
+
+    <TextView
+        android:id="@+id/id_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="ACCESS RESULT" />
+
+    <WebView
+        android:id="@+id/id_webview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+</LinearLayout>

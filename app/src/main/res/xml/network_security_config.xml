@@ -1,0 +1,36 @@
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+    <!--允许http访问-->
+    <base-config cleartextTrafficPermitted="true"
+        tools:ignore="InsecureBaseConfiguration" />
+    <!--证书校验-->
+    <domain-config>
+        <domain includeSubdomains="true">sogou.com</domain>
+        <trust-anchors>
+            <!--获取证书: openssl s_client -connect sogou.com:443 -servername sogou.com | openssl x509 -out sogou.pem-->
+            <certificates src="@raw/sogou"/>
+        </trust-anchors>
+    </domain-config>
+
+    <!--公钥校验-->
+    <domain-config>
+        <domain includeSubdomains="true">zhihu.com</domain>
+        <!--zhihu.com公钥校验
+        获取公钥: openssl s_client -connect zhihu.com:443 -servername zhihu.com | openssl x509 -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
+        -->
+        <pin-set expiration="2099-01-01"
+            tools:ignore="MissingBackupPin">
+            <pin digest="SHA-256">vzXV96/gpZMyyNNhyTdjtX0/NUVYTtmYqWcVVaUtTdQ=</pin>
+        </pin-set>
+    </domain-config>
+
+
+    <!--证书校验-->
+    <domain-config>
+        <domain includeSubdomains="true">www.test.com</domain>
+        <trust-anchors>
+            <certificates src="@raw/server_cert"
+                tools:ignore="NetworkSecurityConfig" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
+
