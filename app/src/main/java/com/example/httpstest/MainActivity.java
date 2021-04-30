@@ -117,11 +117,11 @@ public class MainActivity extends AppCompatActivity {
                         Message message = new Message();
                         message.what = 1;
                         try (Response response = mClient.newCall(request).execute()) {
-                            message.obj = "http_connect access vulnweb.com success";
-                            Log.d(TAG, "http_connect access vulnweb.com success return code:"+response.code());
+                            message.obj = "http connect access vulnweb.com success";
+                            Log.d(TAG, "http connect access vulnweb.com success return code:"+response.code());
                         } catch (IOException e) {
-                            message.obj = "http_connect access vulnweb.com failed";
-                            Log.d(TAG, "http_connect access vulnweb.com failed");
+                            message.obj = "http connect access vulnweb.com failed";
+                            Log.d(TAG, "http connect access vulnweb.com failed");
                             e.printStackTrace();
                         }
                         mHandler.sendMessage(message);
@@ -148,11 +148,11 @@ public class MainActivity extends AppCompatActivity {
                         Message message = new Message();
                         message.what = 1;
                         try (Response response = mClient.newCall(request).execute()) {
-                            message.obj = "https_connect_without_ca success";
-                            Log.d(TAG, "https_connect_without_ca success return code:"+response.code());
+                            message.obj = "https connect without ca success";
+                            Log.d(TAG, "https connect without ca success return code:"+response.code());
                         } catch (IOException e) {
-                            message.obj = "https_connect_without_ca failed";
-                            Log.d(TAG, "https_connect_without_ca failed");
+                            message.obj = "https connect without ca failed";
+                            Log.d(TAG, "https connect without ca failed");
                             e.printStackTrace();
                         }
                         mHandler.sendMessage(message);
@@ -180,11 +180,11 @@ public class MainActivity extends AppCompatActivity {
                         Message message = new Message();
                         message.what = 1;
                         try (Response response = client.newCall(request).execute()) {
-                            message.obj = "https_connect_with_system_ca success";
-                            Log.d(TAG, "https_connect_with_system_ca success return code:"+response.code());
+                            message.obj = "https connect with system ca success";
+                            Log.d(TAG, "https connect with system ca success return code:"+response.code());
                         } catch (IOException e) {
-                            message.obj = "https_connect_with_system_ca failed";
-                            Log.d(TAG, "https_connect_with_system_ca failed");
+                            message.obj = "https connect with system ca failed";
+                            Log.d(TAG, "https connect with system ca failed");
                             e.printStackTrace();
                         }
                         mHandler.sendMessage(message);
