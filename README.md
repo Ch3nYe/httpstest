@@ -9,3 +9,5 @@
 - certs 存储证书 域名www.test.com
 
 - https_server.py 启动用于双向认证的https服务器
+
+- 其他目录即 Android APP 开发源码目录
